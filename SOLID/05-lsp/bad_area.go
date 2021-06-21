@@ -5,21 +5,24 @@ import (
 )
 
 type Rectangle struct {
-  Width float32 
-  Height float32 
+  Width float32
+  Height float32
 }
 
 func (r *Rectangle) Area() float32 {
   return r.Width * r.Height
 }
 
-type Circle struct {
+func NewRectangle(width, height float32) *Rectangle {
+  return &Rectangle{Width: width, Height: height}
+}
+
+type Square struct {
   Rectangle
 }
 
-func (c * Circle) Area() float32 {
-  side := (c.Width + c.Height) * 2 / 4
-  return side * side 
+func NewSquare(side float32) *Square {
+  return &Square{Rectangle{Width: side, Height: side}}
 }
 
 func printArea(rect *Rectangle) {
@@ -27,9 +30,9 @@ func printArea(rect *Rectangle) {
 }
 
 func main() {
-  r := &Rectangle{Width: 2, Height: 3}
+  r := NewRectangle(2, 3)
   printArea(r)
-  
-  s:= &Circle{Rectangle{Width: 2, Height: 3}}
+
+  s := NewSquare(2)
   printArea(s)
-}  
+}
