@@ -1,12 +1,11 @@
 # golang-oop-solid
 
-- AIFB
-- OOP
-- SOLID
-  - srp
-  - ocp
-  - lsp
-  - isp
-  - dip
-  - lkp
+- aifb
+- oop
+- srp
+- ocp
+- lsp
+- isp
+- dip
+- lkp
 
